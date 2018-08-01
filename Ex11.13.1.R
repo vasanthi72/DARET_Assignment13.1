@@ -1,0 +1,8 @@
+Salary_Data <- read.csv("E:/kamagyana/Computing/DARET/Assignments/Salary_Data.csv", stringsAsFactors=FALSE)
+View(Salary_Data)
+plot(Salary_Data$YearsExperience, Salary_Data$Salary)
+reg <- lm(Salary_Data$Salary ~ Salary_Data$YearsExperience)
+summary(reg)
+abline(reg, col="red")
+reg1 <- lm(Salary_Data$Salary ~ poly(Salary_Data$YearsExperience,3))
+summary(reg1)
